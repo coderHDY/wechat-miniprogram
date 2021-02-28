@@ -1,0 +1,6 @@
+.imgIntro{
+  margin: 20rpx 30rpx;
+}
+.optionBotton{
+  margin-top: 30rpx !important;
+}

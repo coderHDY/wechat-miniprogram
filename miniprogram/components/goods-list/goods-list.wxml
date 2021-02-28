@@ -1,0 +1,7 @@
+<view class="goods-list">
+	<view wx:for="{{showGoods}}" wx:key="index" class="good-box" bind:tap="toDetail" data-id="{{item._id}}">
+		<image src="{{item.smallImg.url}}" class="good-img"></image>
+		<text  class="goods-title">{{item.name}}</text>
+		<view class="goods-price">￥{{item.price}}</view>
+	</view>
+</view>

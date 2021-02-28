@@ -1,0 +1,15 @@
+/* miniprogram/pages/newOrder/newOrder.wxss */
+.top-title{
+  text-align: center;
+  font-weight: 700;
+  margin:50rpx ;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.1);
+}
+.input-class{
+  height: 130rpx !important;
+}
+.goods{
+  height: 300rpx;
+  border-top: solid 1px rgba(100, 100, 100, 0.6);
+  background-color: rgb(232, 232, 232);
+}

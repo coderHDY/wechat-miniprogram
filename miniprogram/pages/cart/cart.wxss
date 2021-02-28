@@ -1,0 +1,4 @@
+/* pages/cart/cart.wxss */
+.goods-list{
+  height: calc(100vh - 50px);
+}

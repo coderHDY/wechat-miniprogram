@@ -1,0 +1,7 @@
+<swiper class="swiper" indicator-dots autoplay 
+        interval="{{2500}}"
+        circular="{{true}}">
+  <swiper-item wx:for="{{banners}}" class="banner-item" wx:key="index">
+   <image src="{{item.src || item.url}}" class="banner-img" bind:tap="bannerTap" data-link="{{item.link}}"/>
+  </swiper-item>
+</swiper>

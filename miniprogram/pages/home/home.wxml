@@ -1,0 +1,5 @@
+<search-box/>
+<my-swiper banners="{{banners}}"/>
+<van-toast id="van-toast" />
+<view class="newTitle">新品上市</view>
+<goods-list showGoods="{{showGoods}}"/>

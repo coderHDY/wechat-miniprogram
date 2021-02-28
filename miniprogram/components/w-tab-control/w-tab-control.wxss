@@ -1,0 +1,19 @@
+/* components/w-tab-control/w-tab-control.wxss */
+.control-box {
+  display: flex;
+  background-color: #ffffff;
+  height: 80rpx;
+  align-items: center;
+  box-shadow: 0 5rpx 5rpx 5rpx rgba(100, 100, 100, 0.3);
+}
+
+.control-item {
+  flex: 1;
+  text-align: center;
+}
+
+.active {
+  color: #ff0000;
+  border-bottom: 6rpx solid #ff0000;
+  padding: 10rpx 20rpx;
+}

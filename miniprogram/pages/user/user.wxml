@@ -1,0 +1,15 @@
+<image src="cloud://teamall-6g4mhcmf5d49f086.7465-teamall-6g4mhcmf5d49f086-1302577971/imgs/banners/04.png" class="title-img" />
+<view class="userInfo">
+	<image src="{{user.avatarUrl}}" class="avatar" />
+	<view class="nick-name">欢迎您，{{user.nickName}}</view>
+</view>
+<view class="options">
+	<view class="options-item" bind:tap="seeMyOrders">我的订单</view>
+	<view class="options-item" bind:tap="findServer">联系客服</view>
+</view>
+
+
+<view class="administrator" >
+	<van-button type="primary" bind:tap="toAddProduct">添加商品</van-button>
+	<van-button type="danger" bind:tap="toAddProduct">查看订单</van-button>
+</view>

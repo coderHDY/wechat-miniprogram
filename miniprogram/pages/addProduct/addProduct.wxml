@@ -1,0 +1,51 @@
+<van-dropdown-menu>
+  <van-dropdown-item value="{{ currentType }}" options="{{ types }}" 
+  bind:change="onSwitchChange"/>
+</van-dropdown-menu>
+<van-cell-group>
+  <van-field
+    model:value="{{ name }}"
+    label="商品："
+    placeholder="请输入商品名"
+    border="{{ false }}"
+    class="input"
+    border
+    required
+  />
+  <van-field
+    model:value="{{ price }}"
+    label="价格："
+    type="digit"
+    border="{{ false }}"
+    border
+    required
+  />
+    <van-field
+    model:value="{{ description }}"
+    label="介绍："
+    type="textarea"
+    placeholder="请输入介绍"
+    fixed
+    autosize
+    border
+    custom-style="height:300rpx"
+    maxlength="100"
+  />
+</van-cell-group>
+<view class="imgIntro">小图片: 放320*480 比例的最合适</view>
+<van-uploader file-list="{{ fileSmall }}" bind:after-read="afterReadSmall" 
+              deletable
+              max-count="1"
+              accept="image"
+              bind:delete="delImgSmall"
+               class="imgIntro"
+              />
+<view class="imgIntro">大图片： 放616*280 比例的最合适</view>
+<van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" 
+              mutiple 
+              deletable
+              max-count="6"
+              accept="image"
+              bind:delete="delImg"
+              class="imgIntro"/>
+<van-button type="primary" bind:tap="addProduct" block round class="optionBotton">添加商品</van-button>
