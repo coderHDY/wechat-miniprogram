@@ -2,3 +2,14 @@
 .goods-list{
   height: calc(100vh - 50px);
 }
+.is-empty{
+  font-weight:700;
+  font-size: 40rpx;
+  text-align: center;
+  margin-top: 60rpx;
+  color: rgb(0, 165, 27);
+  text-shadow: 6rpx 6rpx 6rpx rgba(100, 100, 100, 0.6);
+}
+.new-order{
+  border-top: 1rpx solid rgba(100, 100, 100, 0.6);
+}

@@ -14,9 +14,6 @@ Component({
     value: '',
   },
 
-  /**
-   * 组件的方法列表
-   */
   methods: {
     onChange(e) {
       this.setData({
@@ -24,10 +21,16 @@ Component({
       });
     },
     onSearch() {
-      Toast('搜索' + this.data.value);
-    },
-    onClick() {
-      Toast('搜索' + this.data.value);
-    },
+      if(this.data.value.trim() === ""){
+        wx.showToast({
+          title: '搜索字不能为空',
+          icon:"none"
+        })
+      }else{
+        wx.navigateTo({
+          url: '../../pages/searchPage/searchPage?searchKey='+this.data.value
+        })
+      }
+    }
   }
 })

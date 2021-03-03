@@ -20,7 +20,6 @@ Page({
   },
   getTypes(){
     wx.cloud.database().collection("types").get().then(res=>{
-      console.log(res)
       const types=[]
       res.data.forEach((item,index)=>{
         types.push({

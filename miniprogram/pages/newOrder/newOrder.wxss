@@ -5,6 +5,7 @@
   margin:50rpx ;
   border-bottom: 1px solid rgba(100, 100, 100, 0.1);
 }
+/**/
 .input-class{
   height: 130rpx !important;
 }
@@ -12,4 +13,17 @@
   height: 300rpx;
   border-top: solid 1px rgba(100, 100, 100, 0.6);
   background-color: rgb(232, 232, 232);
+} 
+.black{
+  color:#646566 !important;
+}
+.myAddress{
+  display: block;
+  position: absolute;
+  right: 20rpx;
+  top: 170rpx;
+  font-size: 30rpx;
+  color: #ff0000;
+ border-bottom: #ff0000 solid 1px;
+  z-index: 10;
 }

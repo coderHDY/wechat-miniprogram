@@ -1,0 +1,10 @@
+.del{
+  display: inline-block;
+  width: 65px;
+  height: 100%;
+  line-height: 65px;
+  color: #ffffff;
+  vertical-align: middle;
+  text-align: center;
+  background-color: rgb(255, 0, 0);
+}

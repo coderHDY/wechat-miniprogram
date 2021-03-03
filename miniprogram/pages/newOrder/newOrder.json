@@ -4,6 +4,7 @@
      "van-area": "@vant/weapp/area/index",
      "van-popup": "@vant/weapp/popup/index",
      "van-cell": "@vant/weapp/cell/index",
-     "van-button": "@vant/weapp/button/index"
+     "van-button": "@vant/weapp/button/index",
+     "new-info":"../../components/new-info/new-info"
   }
 }

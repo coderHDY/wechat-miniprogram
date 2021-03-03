@@ -1,11 +1,8 @@
 // pages/user/user.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    user:{}
+    user:{},
+    isAdministrator:null
   },
   toAddProduct(){
     wx.navigateTo({
@@ -18,12 +15,33 @@ Page({
     })
   },
   seeMyOrders(){
-    wx.cloud.callFunction({
-      name:"seeMyOrders"
-    }).then(res=>{
-      console.log(res)
+    wx.navigateTo({
+      url:"../myOrders/myOrders"
     })
-    // console.log("seeMyOrders")
+  },
+  seeMyAddress(){
+    wx.navigateTo({
+      url: '../myAddress/myAddress',
+    })
+  },
+  seeAllOrders(){
+    wx.navigateTo({
+      url: '../seeAllOrders/seeAllOrders',
+    })
+  },
+  login(){
+    wx.cloud.callFunction({
+      name:"checkAdministrator"
+    }).then(res=>{
+      this.setData({
+        isAdministrator:res.result
+      })
+    })
+  },
+  addType(){
+    wx.navigateTo({
+      url: '../addType/addType',
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -34,52 +52,14 @@ Page({
       this.setData({
         user:res.userInfo
       })
-      console.log(res)
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
 
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
   /**
    * 用户点击右上角分享
    */

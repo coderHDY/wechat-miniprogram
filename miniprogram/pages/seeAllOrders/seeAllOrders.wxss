@@ -1,0 +1,55 @@
+/* miniprogram/pages/myOrders/myOrders.wxss */
+.order-box{
+  margin: 20rpx;
+  font-size: 30rpx;
+  border-top: 1px solid rgba(100, 100, 100, 0.3);
+  padding-bottom: 20rpx;
+}
+.label{
+  display: inline-block;
+  vertical-align: top;
+  width: 160rpx;
+}
+
+.order-id{
+  color:#00c700;
+  font-weight: 700;
+
+}
+.paied{
+  display: inline-block;
+  width: 150rpx;
+  font-size: 30rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #00c700;
+  border: #00c700 solid 2rpx;
+  border-radius: 10rpx;
+}
+.not-paied{
+  display: inline-block;
+  font-size: 30rpx;
+  width: 150rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #ff0d05;
+  border: #ff0d05 solid 2rpx;
+  border-radius: 10rpx;
+}
+.delivery-code{
+  display: inline-block;
+  width: calc(100vw - 200rpx);
+}
+.address{
+  display: inline-block;
+  width: calc(100vw - 250rpx );
+}
+.products-box{
+  display: inline-block;
+  width: calc(100vw - 250rpx );
+}
+.products-item{
+  display: inline-block;
+  width: 80%;
+  text-overflow: ellipsis;
+}

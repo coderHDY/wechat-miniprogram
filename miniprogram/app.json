@@ -1,5 +1,5 @@
 {
-  "entryPagePath":"pages/home/home",
+  "entryPagePath": "pages/home/home",
   "pages": [
     "pages/home/home",
     "pages/categories/categories",
@@ -8,10 +8,15 @@
     "pages/detail/detail",
     "pages/addProduct/addProduct",
     "pages/server/server",
-    "pages/newOrder/newOrder"
+    "pages/newOrder/newOrder",
+    "pages/myOrders/myOrders",
+    "pages/searchPage/searchPage",
+    "pages/seeAllOrders/seeAllOrders",
+    "pages/addAddress/addAddress",
+    "pages/myAddress/myAddress",
+    "pages/addType/addType"
   ],
-  "usingComponents": {
-  },
+  "usingComponents": {},
   "window": {
     "navigationBarBackgroundColor": "#559a47",
     "navigationBarTextStyle": "white",

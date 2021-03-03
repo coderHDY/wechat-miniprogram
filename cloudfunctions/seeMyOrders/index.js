@@ -11,5 +11,5 @@ exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   return await ordersCollection.where({
     _openid:wxContext.OPENID
-  }).get()
+  }).orderBy("date","desc").get()
 }

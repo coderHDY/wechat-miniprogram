@@ -5,12 +5,20 @@ App({
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
       wx.cloud.init({
-        env: 'teamall-6g4mhcmf5d49f086',
+        env: 'jiejiegao-5gll7u0m03a03d02',
         traceUser: true,
       })
     }
+    wx.cloud.callFunction({
+      name: "login"
+    }).then(res => {
+      // console.log(res)
+    })
+    this.initUserInfo()
     this.globalData = {
-      cart: []
+      cart: [],
+      userInfos: [],
+      defaultAddress: {}
     }
   },
   //-------------------更新购物车-------------------------
@@ -23,7 +31,6 @@ App({
   },
   //---------------删除掉购买量为 0 的商品-----------------
   initOrder() {
-    console.log(this.globalData.cart)
     const cart = this.globalData.cart.filter(item => {
       return item.num !== 0
     })
@@ -36,4 +43,20 @@ App({
     })
     this.globalData.cart = cart
   },
+  //----------------初始化用户信息-----------------
+  initUserInfo() {
+    wx.cloud.callFunction({
+      name: "seeMyAddress"
+    }).then(res => {
+      const userInfos = res.result.data[0]
+      let defaultAddress
+      if (userInfos) {
+        defaultAddress = userInfos.address[userInfos.defaultIndex]
+      } else {
+        defaultAddress = {}
+      }
+      this.globalData.userInfos = userInfos
+      this.globalData.defaultAddress = defaultAddress
+    })
+  }
 })

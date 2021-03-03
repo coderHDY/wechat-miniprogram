@@ -1,0 +1,14 @@
+<van-radio-group value="{{ radio }}" bind:change="onChange">
+
+  <van-swipe-cell right-width="{{ 65 }}" wx:for="{{address}}" wx:key="index">
+    <van-cell title="{{item.name + ' - ' +  item.phone}}"
+      label="{{item.address.province.name + item.address.city.name + item.address.area.name + item.addressDetail}}" clickable
+      data-name="{{index}}" bind:click="onClick">
+      <radio value="{{index}}" checked="{{index == radio}}"/>
+    </van-cell>
+    <view slot="right" class="del" bindtap="delAddress" data-index="{{index}}">删除</view>
+  </van-swipe-cell>
+
+</van-radio-group>
+
+<button type="primary" style="margin-top:50rpx;border-radius:40rpx;height:80rpx" bind:tap="addAddress">添加新地址</button>

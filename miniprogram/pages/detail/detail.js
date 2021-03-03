@@ -1,4 +1,5 @@
 // pages/detail/detail.js
+const cart = getApp().globalData.cart
 import {
   formatDate
 } from "../../services/service"
@@ -9,6 +10,8 @@ Page({
    */
   data: {
     showWindow: false,
+    showCart:false,
+    cart:[],
     product: {},
     num: 1,
     disabledDown: true,
@@ -17,17 +20,17 @@ Page({
     isBuyNow:false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  //----------------------生命周期函数--监听页面加载----------------------
   onLoad: function (options) {
     wx.cloud.database().collection("products").doc(options.id).get().then(res => {
       res.data.update = formatDate(res.data.update, "yyyy-MM-dd hh:mm:ss")
       this.setData({
-        product: res.data
+        product: res.data,
+        cart:cart
       })
     })
   },
+  //----------------- 立即购买/加入购物车弹窗------------------
   showBuyNow() {
     this.setData({
       tip:"立即购买",
@@ -55,6 +58,7 @@ Page({
       showWindow: false
     });
   },
+  //-------------------- 当前商品的数量控制----------------------------
   up() {
     this.setData({
       num: this.data.num + 1
@@ -85,13 +89,15 @@ Page({
       })
     }
   },
+  //------------------------联系商家---------------
   findServer(){
     wx.navigateTo({
       url: '../server/server',
     })
   },
-  addCart() {
-    const cart = getApp().globalData.cart
+  //----------------------添加购物车/立即购买----------
+  addCart(event) {
+    const id=event.currentTarget.dataset.id  // 重构？传参
     let cartItem = cart.find(item => {
       return item.id === this.data.product._id
     })
@@ -101,7 +107,11 @@ Page({
         product: this.data.product,
         num: this.data.num
       }
-      cart.push(cartItem)
+      const newCart=this.data.cart
+      newCart.push(cartItem)
+      this.setData({
+        cart:newCart
+      })
     } else {
       cartItem.num += this.data.num;
     }
@@ -122,15 +132,34 @@ Page({
         url: '../newOrder/newOrder',
       })
   },
+  //-----------------控制购物车按钮----------------
+  seeCart(){
+    this.setData({
+      showCart:true
+    })
+  },
+  onCloseCart(){
+    this.setData({
+      showCart:false
+    })
+  },
+  downCartItem(event){
+    const index=event.currentTarget.dataset.index
+    cart[index].num--
+    this.updateCart()
+  },
+  upCartItem(event){
+    const index=event.currentTarget.dataset.index
+    cart[index].num++
+    this.updateCart()
+  },
+  updateCart(){
+    this.setData({
+      cart:cart
+    })
+  },
   //------------------生命周期函数--监听页面初次渲染完成-------------
   onShow: function () {
-
     this.onClose()
   },
-  onHide: function () {
-
-  },
-  onUnload: function () {
-
-  }
 })

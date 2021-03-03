@@ -1,0 +1,6 @@
+<van-field
+    model:value="{{ value }}"
+    label="种类："
+    placeholder="请输入种类名"
+  />
+  <button type="primary" bindtap="addType">添加</button>

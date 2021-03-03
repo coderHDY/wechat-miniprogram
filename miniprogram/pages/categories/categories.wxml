@@ -2,8 +2,8 @@
 
 <goods-list showGoods="{{goodsList}}"/>
 
-<van-popup show="{{ show }}" bind:close="onClose" show="{{ show }}" position="right" bind:close="onClose" custom-style="height:100%;">
-	<van-sidebar active-key="{{ activeKey }}">
-		<van-sidebar-item wx:for="{{types}}" title="{{item}}" bind:tap="changeType" data-index="{{index}}" wx:key="index"/>
+<van-popup show="{{ show }}" bind:close="onClose" show="{{ show }}" position="right" bind:close="onClose" custom-style="height:100%;width:30%;">
+	<van-sidebar active-key="{{ activeKey }}" custom-class="slide-bar">
+		<van-sidebar-item wx:for="{{types}}" title="{{item}}" bind:tap="changeType" data-index="{{index}}" wx:key="index" custom-class="slide-bar-item"/>
 	</van-sidebar>
 </van-popup>

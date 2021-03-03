@@ -9,7 +9,7 @@ Component({
       value: []
     }
   },
-  
+
   /**
    * 组件的初始数据
    */
@@ -22,7 +22,9 @@ Component({
    */
   methods: {
     bannerTap(event) {
-      console.log(event.currentTarget.dataset.link)
+      wx.navigateTo({
+        url: '../../pages/detail/detail?id=' + event.currentTarget.dataset.link,
+      })
     }
   }
 })

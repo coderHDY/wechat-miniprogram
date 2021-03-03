@@ -1,13 +1,9 @@
 <view class="top-title">请填写收货信息</view>
-<van-field label="用户名" model:value="{{ name }}" placeholder="请输入用户名" border required/>
-<van-field label="手机：" model:value="{{ phone }}" placeholder="请输入收件人手机号" border required/>
-<van-field label="省市：" model:value="{{ address.province.name }} {{address.city.name}} {{address.area.name}}" border disabled bind:tap="showCitys" />
-<van-field label="详细地址：" model:value="{{ addressDetail }}" placeholder="请输入详细地址" border type="textarea" autosize maxlength="50" input-class="input-class" />
+<navigator url="../myAddress/myAddress" class="myAddress">地址簿</navigator>
+
+<new-info userInfo="{{defaultAddress}}" id="newInfo"/>
+
 <scroll-view class="goods" scroll-y>
   <van-cell wx:for="{{order}}" title="{{item.product.name}}" value="*{{item.num}}" wx:key="index" />
 </scroll-view>
-<van-button type="danger" round block custom-style="position:relative;margin-top:100rpx;" bind:tap="createNewOrder">下单</van-button>
-
-<van-popup show="{{ showArea }}" bind:close="chooseCity" position="buttom" custom-style="width:100vw;">
-	<van-area area-list="{{ area }}" value="110101" bind:confirm="chooseCity" bind:cancel="hideCitys" />
-</van-popup>
+<van-button type="danger" round block custom-style="position:relative;margin-top:100rpx;" bind:tap="getLockUserInfo">下单</van-button> 

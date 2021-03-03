@@ -1,0 +1,2 @@
+<new-info id="info-box"/>
+<button class="addAddress" bindtap="addAddress">添加地址</button>

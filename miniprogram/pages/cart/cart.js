@@ -2,7 +2,8 @@ Page({
   //-----------------------------------页面的初始数据---------------------------------
   data: {
     cart: [],
-    totalPrice: 0
+    totalPrice: 0,
+    isEmpty: true
   },
   calcPrice() {
     const totalPrice = this.data.cart.reduce((preVal, item) => {
@@ -20,8 +21,8 @@ Page({
     } else {
       wx.showToast({
         title: '请选择商品',
-        duration:1500,
-        icon:"none"
+        duration: 1500,
+        icon: "none"
       })
     }
   },
@@ -53,6 +54,9 @@ Page({
       cart: getApp().globalData.cart
     });
     this.calcPrice()
+    this.setData({
+      isEmpty: this.data.cart.length === 0 ? true : false
+    })
   },
 
   //-------------------------------------用户点击右上角分享------------

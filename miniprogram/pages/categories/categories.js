@@ -35,7 +35,6 @@ Page({
   getGoods(){
     const produsts=wx.cloud.database().collection("products");
     const currentType=this.data.types[this.data.currentIndex]
-    console.log(currentType)
     produsts.where({
       type:currentType
     }).get().then(res=>{

@@ -1,0 +1,42 @@
+<view wx:for="{{orders}}" wx:key="index" class="order-box">
+	<view class="order-id-box">
+		<text class="label">订单编号：</text>
+		<text user-select class="order-id">{{item.orderId}}</text>
+	</view>
+	<view class="is-paied">
+		<text class="label">支付状态：</text>
+		<text wx:if="{{item.isPaied}}" class="paied">已支付</text>
+		<text wx:else class="not-paied">未支付</text>
+	</view>
+	<view>
+		<text class="label">下单时间：</text>
+		<text class="order-date">{{item.date}}</text>
+	</view>
+	<view class="delivery-box">
+		<text class="label">快递编号：</text>
+		<text class="delivery-code" user-select>{{item.delivery}}</text>
+		<text wx:if="{{!item.delivery || item.delivery.trim === '' }}" class="delivery-wait">等待发货...</text>
+	</view>
+
+	<view>
+		<text class="label" space="emsp">姓 名：</text>{{item.userInfo.name}}
+	</view>
+	<view>
+		<text class="label" space="emsp">电 话：</text>{{item.userInfo.phone}}
+	</view>
+	<view>
+		<text class="label" space="emsp">地 址：</text>
+		<text class="address">{{item.userInfo.address.province.name + item.userInfo.address.city.name + item.userInfo.address.area.name + item.userInfo.addressDetail}}</text>
+	</view>
+	<view>
+		<text class="label" space="emsp">商 品：</text>
+		<view class="products-box">
+			<text wx:for="{{item.products}}" wx:key="index" wx:for-item="product"
+				class="products-item">{{product.product.name}}*{{product.num}}</text>
+		</view>
+	</view>
+	<view class="total-price">
+		<text class="label" space="emsp">总 价：</text>
+		{{item.price}}
+	</view>
+</view>

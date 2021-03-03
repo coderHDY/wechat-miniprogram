@@ -1,0 +1,8 @@
+<van-field label="用户名" focus model:value="{{ name }}" placeholder="请输入用户名" border required/>
+<van-field label="手机：" type="number" model:value="{{ phone }}" placeholder="请输入收件人手机号" border required/>
+<van-field label="省市：" placeholder="请选择" label-class="black" input-class="black"  model:value="{{ address.province.name }} {{address.city.name}} {{address.area.name}}" border disabled bind:tap="showCitys" />
+<van-field label="详细地址：" model:value="{{ addressDetail }}" placeholder="请输入详细地址" border type="textarea" autosize maxlength="50" input-class="input-class" />
+
+<van-popup show="{{ showArea }}" bind:close="chooseCity" position="buttom" custom-style="width:100vw;height:60vh;position:fixed;bottom:0rpx">
+  <van-area area-list="{{ area }}" value="110101" bind:confirm="chooseCity" bind:cancel="hideCitys" />
+</van-popup>
