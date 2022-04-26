@@ -1,6 +1,6 @@
 
 .swiper{
-  height: 52vw;
+  height: 45vw;
 }
 .banner-item{
 width: 100%;

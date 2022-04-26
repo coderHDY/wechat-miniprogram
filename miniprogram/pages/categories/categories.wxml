@@ -1,7 +1,9 @@
-<van-cell title="{{types[currentIndex]}}" value="种类" is-link bind:click="showPopup" value-class="value-class" title-class="title-class" />
+<van-cell title="{{types[currentIndex]}}" value="种类" is-link bind:click="showPopup" value-class="value-class" custom-class="fix-top" title-class="title-class" />
 
-<goods-list showGoods="{{goodsList}}"/>
-
+<view style="padding-top:88rpx">
+	<goods-list showGoods="{{goodsList}}"/>
+</view>
+	
 <van-popup show="{{ show }}" bind:close="onClose" show="{{ show }}" position="right" bind:close="onClose" custom-style="height:100%;width:30%;">
 	<van-sidebar active-key="{{ activeKey }}" custom-class="slide-bar">
 		<van-sidebar-item wx:for="{{types}}" title="{{item}}" bind:tap="changeType" data-index="{{index}}" wx:key="index" custom-class="slide-bar-item"/>

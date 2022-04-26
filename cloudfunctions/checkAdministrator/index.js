@@ -8,5 +8,5 @@ cloud.init({
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
 
-  return wxContext.OPENID === "oDLWj4kSKai2Zh7lwW55EGhK9LYA"
+  return wxContext.OPENID === "oa2PJ5SAgY2ocq-uf0sbnuODNp_k"
 }

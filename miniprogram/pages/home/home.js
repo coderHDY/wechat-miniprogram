@@ -31,7 +31,7 @@ Page({
 
   },
   onShow: function () {
-
+    this.onLoad()
   },
   onHide: function () {
 

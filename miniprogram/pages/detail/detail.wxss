@@ -3,7 +3,7 @@
   margin-top: 10rpx;
   text-align: center;
   font-size: 50rpx;
-  color: #70e412;
+  color: #3a0eff;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: 700;
   text-shadow: 6rpx 6rpx 6rpx rgba(100, 100, 100, 0.3);
@@ -54,10 +54,17 @@
   margin:0 30rpx 30rpx 30rpx;
   font-size: 40rpx;
 }
+.cart-item-img {
+  width: 120rpx;
+  height: 56rpx;
+}
+.cart-item-name {
+  position: absolute;
+}
 .numBox{
   position: absolute;
-  display: inline-block;
-  /* top: 30rpx; */
+  display: flex;
+  top: 0rpx;
   right:20rpx ;
   text-align: center;
 }

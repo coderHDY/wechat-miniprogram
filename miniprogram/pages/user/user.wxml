@@ -1,18 +1,18 @@
-<image src="cloud://jiejiegao-5gll7u0m03a03d02.6a69-jiejiegao-5gll7u0m03a03d02-1305060102/imgs/banners/04.png" class="title-img" />
+<image src="cloud://teamall-6g4mhcmf5d49f086.7465-teamall-6g4mhcmf5d49f086-1302577971/imgs/banners/04.png" class="title-img" />
 <view class="userInfo">
 	<image src="{{user.avatarUrl}}" class="avatar" />
 	<view class="nick-name">欢迎您 {{user.nickName}}</view>
 </view>
 <view class="options">
-	<button class="login" open-type="getUserInfo" bindtap="login">登录</button>
+	<button wx:if="{{isShowLogin}}" class="login" bindtap="getUserProfile">登录</button>
 	<view class="options-item" bind:tap="seeMyOrders">我的订单</view>
 	<view class="options-item" bind:tap="seeMyAddress">我的地址</view>
 	<view class="options-item" bind:tap="findServer">联系客服</view>
 </view>
 
-
 <view class="administrator" wx:if="{{isAdministrator}}">
 	<van-button type="primary" bind:tap="toAddProduct">添加商品</van-button>
 	<van-button type="default" bind:tap="addType">添加类型</van-button>
 	<van-button type="danger" bind:tap="seeAllOrders">查看订单</van-button>
+	<van-button type="primary" bind:tap="modifyProduct">修改商品</van-button>
 </view>

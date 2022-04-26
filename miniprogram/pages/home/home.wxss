@@ -5,7 +5,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 45rpx;
   text-align: center;
-  color: rgba(30, 133, 30,0.8);
+  color: #ee0a24;
   text-shadow: 4rpx 4rpx 4rpx rgba(75, 89, 78, 0.3);
-  box-shadow: 10rpx 10rpx 10rpx rgba(142, 238, 145, 0.5);
+  box-shadow: 10rpx 10rpx 10rpx #ee0a24;
 }

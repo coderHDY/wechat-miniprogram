@@ -1,7 +1,7 @@
 // components/w-tab-control/w-tab-control.js
 Component({
   /**
-   * 组件的属性列表
+   * 横向的一个bar，控制页面内分页效果
    */
   properties: {
     titles:{

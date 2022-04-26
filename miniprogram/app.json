@@ -14,15 +14,17 @@
     "pages/seeAllOrders/seeAllOrders",
     "pages/addAddress/addAddress",
     "pages/myAddress/myAddress",
-    "pages/addType/addType"
+    "pages/addType/addType",
+    "pages/chooseModifyProduct/chooseModifyProduct",
+    "pages/modifyProduct/modifyProduct"
   ],
   "usingComponents": {},
   "window": {
-    "navigationBarBackgroundColor": "#559a47",
+    "backgroundColor": "#ee0a24",
+    "navigationBarBackgroundColor": "#ee0a24",
     "navigationBarTextStyle": "white",
-    "backgroundColor": "#000000",
     "backgroundTextStyle": "light",
-    "navigationBarTitleText": "一品春茶"
+    "navigationBarTitleText": "淘小淘"
   },
   "tabBar": {
     "selectedColor": "#1296db",

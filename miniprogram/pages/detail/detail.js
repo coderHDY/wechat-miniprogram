@@ -45,9 +45,6 @@ Page({
     })
     this.showPopup()
   },
-  onClickButton() {
-    console.log('点击按钮');
-  },
   showPopup() {
     this.setData({
       showWindow: true
@@ -97,9 +94,9 @@ Page({
   },
   //----------------------添加购物车/立即购买----------
   addCart(event) {
-    const id=event.currentTarget.dataset.id  // 重构？传参
+    const id=event.currentTarget.dataset.id;
     let cartItem = cart.find(item => {
-      return item.id === this.data.product._id
+      return item.id === this.data.product._id;
     })
     if (!cartItem) {
       cartItem = {
@@ -107,11 +104,11 @@ Page({
         product: this.data.product,
         num: this.data.num
       }
-      const newCart=this.data.cart
-      newCart.push(cartItem)
+      const newCart=this.data.cart;
+      newCart.push(cartItem);
       this.setData({
         cart:newCart
-      })
+      });
     } else {
       cartItem.num += this.data.num;
     }

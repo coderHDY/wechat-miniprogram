@@ -2,7 +2,8 @@
 Page({
   data: {
     user:{},
-    isAdministrator:null
+    isAdministrator:null,
+    isShowLogin:true
   },
   toAddProduct(){
     wx.navigateTo({
@@ -28,11 +29,23 @@ Page({
     wx.navigateTo({
       url: '../seeAllOrders/seeAllOrders',
     })
+  }, 
+   getUserProfile(e) {
+    wx.getUserProfile({
+      desc: '是否同意获取您的头像及昵称', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        this.setData({
+          user:res.userInfo,
+          isShowLogin:false
+        })
+        this.login()
+      }
+    })
   },
   login(){
     wx.cloud.callFunction({
       name:"checkAdministrator"
-    }).then(res=>{
+    }).then(res => {
       this.setData({
         isAdministrator:res.result
       })
@@ -41,6 +54,11 @@ Page({
   addType(){
     wx.navigateTo({
       url: '../addType/addType',
+    })
+  },
+  modifyProduct:function(){
+    wx.navigateTo({
+      url: '../chooseModifyProduct/chooseModifyProduct',
     })
   },
   /**

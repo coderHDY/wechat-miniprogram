@@ -1,9 +1,5 @@
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     name: '',
     price: 100,
@@ -63,8 +59,6 @@ Page({
     })
   },
   delImgSmall(event) {
-    console.log("event:")
-    console.log(event)
     wx.cloud.deleteFile({
       fileList: [event.detail.file.url]
     }).then(() => {
@@ -104,8 +98,6 @@ Page({
     })
   },
   delImg(event) {
-    console.log("event:")
-    console.log(event)
     wx.cloud.deleteFile({
       fileList: [event.detail.file.url]
     }).then(() => {

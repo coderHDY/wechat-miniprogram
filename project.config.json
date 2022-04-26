@@ -19,28 +19,32 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": false,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
-    "bundle": false,
-    "useIsolateContext": true,
-    "useCompilerModule": false,
-    "userConfirmedUseCompilerModuleSwitch": false,
+    "enableEngineNative": false,
+    "useIsolateContext": false,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": false,
+    "minifyWXML": true
   },
-  "appid": "wx906461506fb9d52b",
+  "appid": "wxc73c60f214e3bef8",
   "projectname": "teamall",
   "libVersion": "2.14.1",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "plugin": {
       "list": []
@@ -60,9 +64,21 @@
           "query": ""
         },
         {
-          "name": "pages/seeAllOrders/seeAllOrders",
-          "pathName": "pages/seeAllOrders/seeAllOrders",
+          "name": "pages/home/home",
+          "pathName": "pages/home/home",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail/detail",
+          "pathName": "pages/detail/detail",
+          "query": "id=28ee4e3e603c769f083545fd77a5f350",
+          "scene": null
+        },
+        {
+          "name": "pages/categories/categories",
+          "pathName": "pages/categories/categories",
+          "query": "id=28ee4e3e603c769f083545fd77a5f350",
           "scene": null
         }
       ]

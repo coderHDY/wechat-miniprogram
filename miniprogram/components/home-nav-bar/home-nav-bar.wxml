@@ -4,7 +4,7 @@
   use-action-slot
   bind:change="onChange"
   bind:search="onSearch"
-  background="#559a47"
+  background="#ee0a24"
 >
   <view slot="action" bind:tap="onSearch">搜索</view>
 </van-search>

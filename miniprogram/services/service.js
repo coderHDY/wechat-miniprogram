@@ -2,7 +2,6 @@
 export function upImg() {
   wx.chooseImage({
     success:(res)=> {
-      console.log(res.tempFilePaths)
       const timestamp = new Date()
       const tempFilePath = res.tempFilePaths
       tempFilePath.forEach((item,index)=>{
@@ -25,7 +24,7 @@ export function delImg(cloudIds){
   wx.cloud.deleteFile({
     fileList: cloudIds,
     success: res => {
-      console.log(res.fileList)
+      // console.log(res.fileList)
     },
     fail: console.error
   })
